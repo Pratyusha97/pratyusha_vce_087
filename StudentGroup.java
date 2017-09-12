@@ -26,8 +26,8 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public Student[] getStudents() {
 		// Add your implementation here
-		for(String a : Student)
-			System.out.println("%s",a);
+		for(Student a : Student)
+			System.out.println(a);
 	    Syatem.out.println();
 		return null;
 	}
@@ -51,18 +51,26 @@ public class StudentGroup implements StudentArrayOperation {
 		// Add your implementation here
 		if(index<0 || index>students.length)
 			throw new IllegalArgumentException("give correct index");
-		
+		Student[index]=student;
+		if(student==null)
+			throw new IllegalArgumentException("invalid");
 		
 	}
 
 	@Override
 	public void addFirst(Student student) {
 		// Add your implementation here
+		if(student==null)
+			throw new IllegalArgumentException("invalid");
+		Student[0]=student;
 	}
 
 	@Override
 	public void addLast(Student student) {
 		// Add your implementation here
+		if(student==null)
+			throw new IllegalArgumentException("invalid");
+		Student[length-1]=student;
 	}
 
 	@Override
@@ -73,6 +81,11 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public void remove(int index) {
 		// Add your implementation here
+		len=Student.length;
+		for(int i=index;i<len;i++);
+		{	Student[i]=Student[i+1];
+		}
+			
 	}
 
 	@Override
